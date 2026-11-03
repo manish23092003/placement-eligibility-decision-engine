@@ -55,6 +55,8 @@ A candidate is marked **`ELIGIBLE`** only if **all** rules pass. If any rule fai
 
 ```text
 placement-eligibility-decision-engine/
+├── assets/
+│   └── sample-execution.jpg      # Terminal execution screenshot
 ├── src/
 │   ├── BacklogRule.java          # Concrete rule verifying active backlogs
 │   ├── Candidate.java            # Encapsulated candidate model
@@ -82,6 +84,54 @@ javac src/*.java
 ### 2. Run Application
 ```powershell
 java -cp src Main
+```
+
+---
+
+## 📸 Sample Execution & Output
+
+Below is an actual terminal execution demonstrating candidate registration, dynamic job loading, job selection, and rule evaluation:
+
+![Sample Execution](assets/sample-execution.jpg)
+
+### Terminal Transcript
+```text
+PS C:\Users\manis\OneDrive\Desktop\placement-eligibility-decision-engine> javac src/*.java
+PS C:\Users\manis\OneDrive\Desktop\placement-eligibility-decision-engine> java -cp src Main
+Rajender
+99
+0
+2026
+2
+java
+sql
+1
+Infosys
+developer
+60
+0
+2026
+2
+java
+sql
+AVAILABLE JOBS
+1. Infosys - developer
+1
+================================
+PLACEMENT ELIGIBILITY RESULT
+================================
+
+Candidate : Rajender
+Company   : Infosys
+Role      : developer
+
+Percentage : PASS
+Backlogs : PASS
+Graduation Year : PASS
+Skills : PASS
+
+Final Result : ELIGIBLE
+================================
 ```
 
 ---
